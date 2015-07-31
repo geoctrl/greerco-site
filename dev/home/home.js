@@ -8,5 +8,5 @@ greerApp.config(function($stateProvider) {
 });
 
 var homeCtrl = function($scope) {
-    console.log($scope)
+
 };
