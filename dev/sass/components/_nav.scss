@@ -38,7 +38,7 @@ nav {
     right: 0;
     width: 300px;
     background-color: #303030;
-    transform: translate(300px,0);
+    display: none;
     z-index: $z-index-4;
 
     li {
@@ -75,7 +75,28 @@ nav {
   }
 
   .nav-menu-btn {
-    
+    position: absolute;
+    right: 20px;
+    z-index: $z-index-5;
+    font-size: 24px;
+    padding: 5px;
+    border: none;
+    line-height: 20px;
+    margin-top: 7px;
+    color: #fff;
+    background: none;
+    opacity: .6;
+    transition: opacity 300ms ease;
+    cursor: pointer;
+
+    &:active, &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   .nav-bkg-wrapper {
@@ -111,7 +132,8 @@ nav {
       top: auto;
       right: auto;
       bottom: auto;
-      transform: translate(0,0);
+      display: block !important;
+      transform: translate(0,0) !important;
 
       li {
         margin: auto;
@@ -151,6 +173,10 @@ nav {
 
     .nav-bkg-wrapper {
       display: none !important;
+    }
+
+    .nav-menu-btn {
+      display: none;
     }
   }
 }

@@ -2,32 +2,70 @@
   background-image: url("/img/home-bkg.jpg");
   background-position: center;
   background-size: cover;
-}
 
-.home-page-content {
-  height: 170px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -105px 0 0 -124px;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 1px rgba(black, .8);
-}
+  .home-page-content {
+    height: 170px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -105px 0 0 -124px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(black, .8);
+  }
 
-.home-page-logo {
-  width: 200px;
-  display: block;
-  margin: 0 auto;
-}
+  .home-page-logo {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
 
-.home-page-title {
-  font-weight: 700;
-  font-family: $font-secondary-font;
-  font-size: 22px;
-  margin: 20px 0 4px 0;
-}
+  .home-page-title {
+    font-weight: 700;
+    font-family: $font-secondary-font;
+    font-size: 22px;
+    margin: 20px 0 4px 0;
+  }
 
-.home-page-slogan {
-  font-size: 14px;
+  .home-page-slogan {
+    font-size: 14px;
+  }
+
+  @include breakpoint(tablet) {
+    .home-page-content {
+      height: 236px;
+      margin: -140px 0 0 -177px;
+    }
+
+    .home-page-logo {
+      width: 300px;
+    }
+
+    .home-page-title {
+      font-size: 32px;
+    }
+
+    .home-page-slogan {
+      font-size: 20px;
+    }
+  }
+
+  @include breakpoint(computer) {
+    .home-page-content {
+      height: 304px;
+      margin: -182px 0 0 -220px;
+    }
+
+    .home-page-logo {
+      width: 400px;
+    }
+
+    .home-page-title {
+      font-size: 40px;
+    }
+
+    .home-page-slogan {
+      font-size: 24px;
+    }
+  }
 }
