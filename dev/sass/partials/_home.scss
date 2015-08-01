@@ -5,13 +5,29 @@
 }
 
 .home-page-content {
-
-}
-
-.home-page-logo {
-  width: 400px;
+  height: 300px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -140px 0 0 -200px;
+  margin: -200px 0 0 -124px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(black, .8);
+}
+
+.home-page-logo {
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.home-page-title {
+  font-weight: 700;
+  font-family: $font-roboto-slab;
+  font-size: 20px;
+  margin: 20px 0 4px 0;
+}
+
+.home-page-slogan {
+  font-size: 14px;
 }

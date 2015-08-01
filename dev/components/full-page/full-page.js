@@ -1,10 +1,10 @@
 greerApp.directive('fullPage', function($window) {
 
     var fullPageCtrl = function($scope, $element) {
-        var minHeight = 700;
         var resize = function() {
-            $element[0].style.height = $window.innerHeight>minHeight?
-                $window.innerHeight+'px':minHeight+'px';
+            $scope.pageHeight = $scope.pageHeight?$scope.pageHeight:0;
+            $element[0].style.height = $window.innerHeight>$scope.pageHeight?
+                $window.innerHeight+'px':$scope.pageHeight+'px';
         };
 
         var init = function() {
@@ -19,6 +19,9 @@ greerApp.directive('fullPage', function($window) {
 
     return {
         restrict: 'A',
+        scope: {
+            pageHeight: '@'
+        },
         controller: fullPageCtrl
     }
 });
