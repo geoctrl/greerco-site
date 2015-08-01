@@ -1,6 +1,12 @@
-greerApp.directive('nav', function() {
+greerApp.directive('nav', function($compile) {
 
     var navLink = function(scope, element, attrs) {
+        scope.bkgWrapper = angular.element('<div class="nav-bkg-wrapper" ng-click="toggleMenu()"></div>')
+        element.append($compile(scope.bkgWrapper)(scope));
+
+        scope.toggleMenu = function() {
+            console.log('hey')
+        }
 
     };
 

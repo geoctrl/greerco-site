@@ -129,11 +129,11 @@ body {
   background-size: cover; }
 
 .home-page-content {
-  height: 300px;
+  height: 170px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -200px 0 0 -124px;
+  margin: -105px 0 0 -124px;
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8); }
@@ -145,8 +145,8 @@ body {
 
 .home-page-title {
   font-weight: 700;
-  font-family: "Roboto Slab", serif;
-  font-size: 20px;
+  font-family: "Signika Negative" sans-serif;
+  font-size: 22px;
   margin: 20px 0 4px 0; }
 
 .home-page-slogan {
@@ -154,11 +154,125 @@ body {
 
 nav {
   position: fixed;
-  background-color: #fff;
+  background-color: #b94c32;
   left: 0;
   right: 0;
   bottom: 0;
   height: 50px;
   z-index: 20; }
+  nav .nav-logo {
+    background-image: url("/img/logo-small.svg");
+    background-position: center;
+    background-size: cover;
+    margin: 16px 20px;
+    width: 124px;
+    height: 18px;
+    opacity: .6;
+    cursor: pointer;
+    transition: opacity 300ms ease;
+    display: inline-block; }
+    nav .nav-logo:hover {
+      opacity: 1; }
+  nav .nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 40px 0 0 0;
+    float: right;
+    cursor: default;
+    font-family: 'Signika Negative';
+    font-weight: 600;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    background-color: #303030;
+    transform: translate(300px, 0);
+    z-index: 40; }
+    nav .nav-menu li {
+      height: 50px;
+      width: 120px;
+      margin: 0 auto;
+      border: none;
+      position: relative;
+      display: block;
+      line-height: 50px;
+      color: #fff;
+      padding: 0 30px;
+      cursor: pointer;
+      transition: opacity 300ms ease;
+      opacity: .6; }
+      nav .nav-menu li:hover {
+        opacity: 1; }
+      nav .nav-menu li.isActive {
+        opacity: 1; }
+        nav .nav-menu li.isActive:after {
+          content: '';
+          position: absolute;
+          top: 8px;
+          bottom: 8px;
+          left: 0;
+          width: 4px;
+          background-color: #fff; }
+  nav .nav-bkg-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    opacity: 0;
+    background-color: rgba(48, 48, 48, 0.7);
+    z-index: 30; }
+  @media (min-width: 768px) {
+    nav {
+      height: 70px; }
+      nav .nav-logo {
+        margin-top: 26px; }
+      nav .nav-menu {
+        position: relative;
+        list-style: none;
+        margin: 0 20px 0 0;
+        padding: 0;
+        float: right;
+        cursor: default;
+        width: auto;
+        font-family: 'Signika Negative';
+        font-weight: 600;
+        background-color: transparent;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        transform: translate(0, 0); }
+        nav .nav-menu li {
+          margin: auto;
+          width: auto;
+          height: 70px;
+          border: none;
+          position: relative;
+          display: block;
+          float: left;
+          line-height: 70px;
+          color: #fff;
+          padding: 0 10px;
+          cursor: pointer;
+          transition: opacity 300ms ease;
+          opacity: .6; }
+          nav .nav-menu li:hover {
+            opacity: 1; }
+          nav .nav-menu li.isActive {
+            opacity: 1; }
+            nav .nav-menu li.isActive:after {
+              content: '';
+              position: absolute;
+              bottom: auto;
+              width: auto;
+              top: 0;
+              right: 10px;
+              left: 10px;
+              height: 4px;
+              background-color: #fff; }
+      nav .nav-bkg-wrapper {
+        display: none !important; } }
 
 /*# sourceMappingURL=main.css.map */

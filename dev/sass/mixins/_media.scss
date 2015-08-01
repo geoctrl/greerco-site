@@ -1,0 +1,20 @@
+@mixin breakpoint($point) {
+  @if $point == phone {
+    @media (min-width: $break-phone) { @content; }
+  }
+  @else if $point == tablet {
+    @media (min-width: $break-tablet) { @content; }
+  }
+  @else if $point == computer {
+    @media (min-width: $break-computer)  { @content; }
+  }
+  @else if $point == computer-wide {
+    @media (min-width: $break-computer-wide) { @content }
+  }
+}
+
+@mixin print() {
+  @media print {
+    @content
+  }
+}

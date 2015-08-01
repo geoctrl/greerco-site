@@ -1,9 +1,156 @@
 nav {
   position: fixed;
-  background-color: #fff;
+  background-color: $color-primary-500;
   left: 0;
   right: 0;
   bottom: 0;
   height: 50px;
   z-index: $z-index-2;
+
+  .nav-logo {
+    background-image: url("/img/logo-small.svg");
+    background-position: center;
+    background-size: cover;
+    margin: 16px 20px;
+    width: 124px;
+    height: 18px;
+    opacity: .6;
+    cursor: pointer;
+    transition: opacity 300ms ease;
+    display: inline-block;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 40px 0 0 0;
+    float: right;
+    cursor: default;
+    font-family: 'Signika Negative';
+    font-weight: 600;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    background-color: #303030;
+    transform: translate(300px,0);
+    z-index: $z-index-4;
+
+    li {
+      height: 50px;
+      width: 120px;
+      margin: 0 auto;
+      border: none;
+      position: relative;
+      display: block;
+      line-height: 50px;
+      color: #fff;
+      padding: 0 30px;
+      cursor: pointer;
+      transition: opacity 300ms ease;
+      opacity: .6;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.isActive {
+        opacity: 1;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 8px;
+          bottom: 8px;
+          left: 0;
+          width: 4px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  .nav-menu-btn {
+    
+  }
+
+  .nav-bkg-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    opacity: 0;
+    background-color: rgba(#303030, .7);
+    z-index: $z-index-3;
+  }
+
+  @include breakpoint(tablet) {
+    height:70px;
+
+    .nav-logo {
+      margin-top: 26px;
+    }
+
+    .nav-menu {
+      position: relative;
+      list-style: none;
+      margin: 0 20px 0 0;
+      padding: 0;
+      float: right;
+      cursor: default;
+      width: auto;
+      font-family: 'Signika Negative';
+      font-weight: 600;
+      background-color: transparent;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      transform: translate(0,0);
+
+      li {
+        margin: auto;
+        width: auto;
+        height: 70px;
+        border: none;
+        position: relative;
+        display: block;
+        float: left;
+        line-height: 70px;
+        color: #fff;
+        padding: 0 10px;
+        cursor: pointer;
+        transition: opacity 300ms ease;
+        opacity: .6;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &.isActive {
+          opacity: 1;
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: auto;
+            width: auto;
+            top: 0;
+            right: 10px;
+            left: 10px;
+            height: 4px;
+            background-color: #fff;
+          }
+        }
+      }
+    }
+
+    .nav-bkg-wrapper {
+      display: none !important;
+    }
+  }
 }

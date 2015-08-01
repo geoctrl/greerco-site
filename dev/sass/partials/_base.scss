@@ -1,8 +1,7 @@
-$default-font-family: 'Roboto', sans-serif;
-$default-font-weight: 400;
+$font-primary-family: 'Roboto', sans-serif;
+$font-primary-weight: 400;
 
-$font-roboto: 'Roboto' sans-serif;
-$font-roboto-slab: 'Roboto Slab', serif;
+$font-secondary-font: 'Signika Negative' sans-serif;
 
 $color-primary-500: #b94c32;
 $color-primary-100: lighten($color-primary-500, 32%);
@@ -91,7 +90,7 @@ $break-computer-wide: 1200px;
 }
 
 body {
-  font-family: $default-font-family;
+  font-family: $font-primary-family;
   background: #fff;
   margin: 0;
   padding: 0;

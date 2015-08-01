@@ -1,4 +1,7 @@
 @import "partials/base";
-@import "partials/home";
+
+@import "mixins/media";
+
+@import "pages/home";
 
 @import "components/nav";
