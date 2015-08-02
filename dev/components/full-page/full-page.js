@@ -1,10 +1,16 @@
 greerApp.directive('fullPage', function($window) {
 
     var fullPageCtrl = function($scope, $element) {
+
+        var navHeight = 0;
+
         var resize = function() {
-            $scope.pageHeight = $scope.pageHeight?$scope.pageHeight:0;
-            $element[0].style.height = $window.innerHeight>$scope.pageHeight?
-                $window.innerHeight+'px':$scope.pageHeight+'px';
+            navHeight = getNavHeight();
+            $element[0].style.height = $window.innerHeight-navHeight+'px';
+        };
+
+        var getNavHeight = function() {
+            return $scope.hasNav?$window.innerWidth>768?70:50:0;
         };
 
         var init = function() {
@@ -20,7 +26,7 @@ greerApp.directive('fullPage', function($window) {
     return {
         restrict: 'A',
         scope: {
-            pageHeight: '@'
+            hasNav: '@'
         },
         controller: fullPageCtrl
     }

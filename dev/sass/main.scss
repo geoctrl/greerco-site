@@ -1,7 +1,9 @@
-@import "partials/base";
-
 @import "mixins/media";
 
+@import "partials/base";
+@import "partials/grid";
+
 @import "pages/home";
+@import "pages/properties";
 
 @import "components/nav";

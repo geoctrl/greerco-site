@@ -27,6 +27,12 @@ $break-tablet: 768px;
 $break-computer: 992px;
 $break-computer-wide: 1200px;
 
+// grid gutter sizes (in percentages)
+$gutter-large: 5%;
+$gutter-medium: 4%;
+$gutter-small: 3%;
+$base-gutter: $gutter-small;
+
 @mixin clearfix() {
   &:before,
   &:after { content: ""; display: table; }
@@ -91,7 +97,7 @@ $break-computer-wide: 1200px;
 
 body {
   font-family: $font-primary-family;
-  background: #fff;
+  background: $color-primary-500;
   margin: 0;
   padding: 0;
 }
