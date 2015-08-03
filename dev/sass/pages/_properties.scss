@@ -1,4 +1,6 @@
 .po {
+  position: relative;
+  cursor: pointer;
 
   &.po-1 {
     background: url("/img/po-1.jpg") center no-repeat;
@@ -25,4 +27,38 @@
     background-size: cover;
   }
 
+  .po-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#fff, .9);
+    opacity: 0;
+    transition: opacity 400ms ease;
+
+    .po-name {
+      font-family: $font-secondary-font;
+      font-weight: 600;
+      color: #303030;
+      padding: 0 20px;
+      -ms-text-align-last: right;
+      text-align: center;
+      font-size: 24px;
+      line-height: 24px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: -10px auto 0 auto;
+    }
+  }
+
+  &:hover {
+
+    .po-info {
+      opacity: 1;
+    }
+
+  }
 }
