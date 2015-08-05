@@ -1,17 +1,32 @@
 .home-page {
-  background-image: url("/img/home-bkg.jpg");
-  background-position: center;
-  background-size: cover;
+
+
+  .home-page-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .home-page-image-overlay {
+    @extend .home-page-image;
+    opacity: 0;
+  }
 
   .home-page-content {
     height: 170px;
+    width: 250px;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -85px 0 0 -124px;
+    margin: -85px 0 0 -125px;
     color: #fff;
     text-align: center;
-    text-shadow: 0 1px 1px rgba(black, .8);
+    z-index: $z-index-1;
   }
 
   .home-page-logo {
@@ -21,9 +36,9 @@
   }
 
   .home-page-title {
-    font-weight: 700;
+    font-weight: 400;
     font-family: $font-secondary-font;
-    font-size: 22px;
+    font-size: 25px;
     margin: 20px 0 4px 0;
   }
 
@@ -33,8 +48,9 @@
 
   @include breakpoint(tablet) {
     .home-page-content {
+      width: 310px;
       height: 236px;
-      margin: -120px 0 0 -177px;
+      margin: -120px 0 0 -155px;
     }
 
     .home-page-logo {
@@ -52,8 +68,9 @@
 
   @include breakpoint(computer) {
     .home-page-content {
+      width: 680px;
       height: 304px;
-      margin: -152px 0 0 -220px;
+      margin: -152px 0 0 -340px;
     }
 
     .home-page-logo {

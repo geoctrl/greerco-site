@@ -473,50 +473,60 @@ button {
       background-color: #ce7400;
       color: #fff; }
 
-.home-page {
-  background-image: url("/img/home-bkg.jpg");
+.home-page .home-page-image, .home-page .home-page-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
   background-position: center;
   background-size: cover; }
+.home-page .home-page-image-overlay {
+  opacity: 0; }
+.home-page .home-page-content {
+  height: 170px;
+  width: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -85px 0 0 -125px;
+  color: #fff;
+  text-align: center;
+  z-index: 10; }
+.home-page .home-page-logo {
+  width: 200px;
+  display: block;
+  margin: 0 auto; }
+.home-page .home-page-title {
+  font-weight: 400;
+  font-family: "Signika Negative" sans-serif;
+  font-size: 25px;
+  margin: 20px 0 4px 0; }
+.home-page .home-page-slogan {
+  font-size: 14px; }
+@media (min-width: 768px) {
   .home-page .home-page-content {
-    height: 170px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -85px 0 0 -124px;
-    color: #fff;
-    text-align: center;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8); }
+    width: 310px;
+    height: 236px;
+    margin: -120px 0 0 -155px; }
   .home-page .home-page-logo {
-    width: 200px;
-    display: block;
-    margin: 0 auto; }
+    width: 300px; }
   .home-page .home-page-title {
-    font-weight: 700;
-    font-family: "Signika Negative" sans-serif;
-    font-size: 22px;
-    margin: 20px 0 4px 0; }
+    font-size: 32px; }
   .home-page .home-page-slogan {
-    font-size: 14px; }
-  @media (min-width: 768px) {
-    .home-page .home-page-content {
-      height: 236px;
-      margin: -120px 0 0 -177px; }
-    .home-page .home-page-logo {
-      width: 300px; }
-    .home-page .home-page-title {
-      font-size: 32px; }
-    .home-page .home-page-slogan {
-      font-size: 20px; } }
-  @media (min-width: 992px) {
-    .home-page .home-page-content {
-      height: 304px;
-      margin: -152px 0 0 -220px; }
-    .home-page .home-page-logo {
-      width: 400px; }
-    .home-page .home-page-title {
-      font-size: 40px; }
-    .home-page .home-page-slogan {
-      font-size: 24px; } }
+    font-size: 20px; } }
+@media (min-width: 992px) {
+  .home-page .home-page-content {
+    width: 680px;
+    height: 304px;
+    margin: -152px 0 0 -340px; }
+  .home-page .home-page-logo {
+    width: 400px; }
+  .home-page .home-page-title {
+    font-size: 40px; }
+  .home-page .home-page-slogan {
+    font-size: 24px; } }
 
 .po {
   position: relative;
