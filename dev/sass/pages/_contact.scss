@@ -1,0 +1,35 @@
+.contact-page {
+  background: url("/img/contact.jpg") center no-repeat;
+  background-size: cover;
+
+  .card-wrapper {
+
+
+    .card {
+
+    }
+
+    .card-left {
+      height: 200px;
+      width: auto;
+      overflow: hidden;
+    }
+
+    .card-right {
+
+    }
+  }
+
+  @include breakpoint(tablet) {
+    .card-wrapper {
+
+      .card-left {
+        background: #fff;
+        padding: 10px;
+        border-radius: 4px;
+        width: 500px;
+        height: 500px;
+      }
+    }
+  }
+}

@@ -547,7 +547,7 @@ button {
     background: url("/img/po-1.jpg") center no-repeat;
     background-size: cover; }
   .po.po-6 {
-    background: url("/img/po-1.jpg") center no-repeat;
+    background: url("/img/po-6.jpg") center no-repeat;
     background-size: cover; }
   .po .po-info {
     position: absolute;
@@ -555,7 +555,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.8);
     opacity: 0;
     transition: opacity 400ms ease; }
     .po .po-info .po-name {
@@ -574,6 +574,21 @@ button {
       margin: -10px auto 0 auto; }
   .po:hover .po-info {
     opacity: 1; }
+
+.contact-page {
+  background: url("/img/contact.jpg") center no-repeat;
+  background-size: cover; }
+  .contact-page .card-wrapper .card-left {
+    height: 200px;
+    width: auto;
+    overflow: hidden; }
+  @media (min-width: 768px) {
+    .contact-page .card-wrapper .card-left {
+      background: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      width: 500px;
+      height: 500px; } }
 
 nav {
   position: fixed;

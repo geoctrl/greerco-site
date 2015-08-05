@@ -1,6 +1,10 @@
-greerApp.directive('imageTransition', function($interval, $compile) {
+greerApp.directive('imageTransition', function($interval, $compile, $rootScope) {
 
     var imageTransitionLink = function(scope, element, attrs) {
+        $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState) {
+            self.stopInterval();
+        });
+
         var self = this;
         var overlayImage = angular.element('<div class="home-page-image-overlay"></div>');
         var currentIndex = 0;
@@ -15,6 +19,7 @@ greerApp.directive('imageTransition', function($interval, $compile) {
         this.init = function() {
             $compile(overlayImage)(scope);
             element.append(overlayImage);
+            overlayImage[0].style.opacity = 0;
             this.nextImage(intervalCount, Math.floor(Math.floor(Math.random()*(self.images.length-1+1)+1)));
             self.interval = $interval(function() {
                 self.nextImage(intervalCount, null);
