@@ -13,14 +13,15 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
         this.images = [
             '/img/home-bkg-1.jpg',
             '/img/home-bkg-2.jpg',
-            '/img/home-bkg-3.jpg'
+            '/img/home-bkg-3.jpg',
+            '/img/home-bkg-4.jpg'
         ];
 
         this.init = function() {
             $compile(overlayImage)(scope);
             element.append(overlayImage);
             overlayImage[0].style.opacity = 0;
-            this.nextImage(intervalCount, Math.floor(Math.floor(Math.random()*(self.images.length-1+1)+1)));
+            this.nextImage(intervalCount, true);
             self.interval = $interval(function() {
                 self.nextImage(intervalCount, null);
                 intervalCount++;
@@ -29,7 +30,7 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
 
         this.nextImage = function(interval, random) {
             if (random) {
-                currentIndex = random-1;
+                currentIndex = 0;
                 element[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
             } else {
                 if (interval%2) {

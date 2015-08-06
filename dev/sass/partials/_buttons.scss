@@ -149,4 +149,28 @@ button {
 
     }
   }
+
+  &.btn-accent {
+    background-color: transparent;
+    border-color: $color-accent-500;
+    color: $color-accent-500;
+
+    &:hover, &:active {
+      background-color: $color-accent-500;
+      color: #fff;
+    }
+  }
+
+  &.btn-accent-fill {
+    background-color: $color-accent-500;
+    border-color: transparent;
+    color: #fff;
+
+    &:hover {
+      border-color: transparent;
+      background-color: $color-accent-600;
+      color: #fff;
+    }
+  }
+
 }

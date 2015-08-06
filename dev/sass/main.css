@@ -119,7 +119,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background: #ce7400;
+  background: #2a333a;
   margin: 0;
   padding: 0; }
 
@@ -451,27 +451,108 @@ button {
       background-color: #f3f3f3; }
   .btn.btn-primary {
     background-color: transparent;
-    border-color: #ce7400;
-    color: #ce7400; }
+    border-color: #2a333a;
+    color: #2a333a; }
     .btn.btn-primary:hover, .btn.btn-primary:active {
-      background-color: #ce7400;
+      background-color: #2a333a;
       color: #fff; }
   .btn.btn-primary-fill {
-    background-color: #ce7400;
+    background-color: #2a333a;
     border-color: transparent;
     color: #fff; }
     .btn.btn-primary-fill:hover {
       border-color: transparent;
-      background-color: #7c4600;
+      background-color: #08090b;
       color: #fff; }
   .btn.btn-primary-transparent {
     background-color: transparent;
-    color: #ce7400;
+    color: #2a333a;
     border-color: transparent; }
     .btn.btn-primary-transparent:hover {
       border-color: transparent;
-      background-color: #ce7400;
+      background-color: #2a333a;
       color: #fff; }
+  .btn.btn-accent {
+    background-color: transparent;
+    border-color: #c03a2e;
+    color: #c03a2e; }
+    .btn.btn-accent:hover, .btn.btn-accent:active {
+      background-color: #c03a2e;
+      color: #fff; }
+  .btn.btn-accent-fill {
+    background-color: #c03a2e;
+    border-color: transparent;
+    color: #fff; }
+    .btn.btn-accent-fill:hover {
+      border-color: transparent;
+      background-color: #9f3026;
+      color: #fff; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+select,
+textarea {
+  margin: 0;
+  height: 40px;
+  line-height: 20px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: solid 2px #708697;
+  background-color: transparent;
+  background-image: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  transition: background 200ms ease, border 200ms ease;
+  color: #708697;
+  box-shadow: none;
+  box-sizing: border-box; }
+  input[type="text"]:focus, input[type="text"]:active,
+  input[type="email"]:focus,
+  input[type="email"]:active,
+  input[type="tel"]:focus,
+  input[type="tel"]:active,
+  input[type="search"]:focus,
+  input[type="search"]:active,
+  select:focus,
+  select:active,
+  textarea:focus,
+  textarea:active {
+    border-color: #2a333a;
+    background-color: #fff;
+    outline: none; }
+
+input[type="radio"],
+input[type="checkbox"] {
+  cursor: pointer;
+  margin-right: 5px; }
+
+label {
+  font-weight: 700;
+  font-size: 12px;
+  display: block;
+  padding: 4px 0;
+  color: #a3a3a3;
+  cursor: pointer; }
+  label .error {
+    color: red; }
+
+textarea {
+  max-width: 100%;
+  resize: none; }
+
+.form-control {
+  display: block;
+  width: 100%; }
+  .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #a3a3a3;
+    opacity: 1; }
+  .form-control[disabled], fieldset[disabled] .form-control {
+    cursor: not-allowed; }
+
+.form-group {
+  margin-bottom: 14px; }
 
 .home-page .home-page-image, .home-page .home-page-image-overlay {
   position: absolute;
@@ -575,24 +656,68 @@ button {
   .po:hover .po-info {
     opacity: 1; }
 
+.details-page {
+  z-index: 20;
+  background-color: #fff; }
+
 .contact-page {
-  background: url("/img/contact.jpg") center no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  background-color: #3b4852; }
   .contact-page .card-wrapper .card-left {
-    height: 200px;
+    display: none;
+    height: 280px;
     width: auto;
     overflow: hidden; }
+  .contact-page .card-wrapper .card-right {
+    padding: 40px; }
+    .contact-page .card-wrapper .card-right h3 {
+      color: #fff; }
   @media (min-width: 768px) {
+    .contact-page {
+      background: url("/img/contact.jpg") center no-repeat; }
+      .contact-page .card-wrapper .card-left {
+        display: block;
+        background: #fff;
+        padding: 10px;
+        border-radius: 4px;
+        width: 300px;
+        height: 300px;
+        position: fixed;
+        top: 50%;
+        right: 50%;
+        margin: -200px 20px 0 0; }
+      .contact-page .card-wrapper .card-right {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 4px;
+        position: fixed;
+        width: 300px;
+        left: 50%;
+        top: 50%;
+        margin: -200px 0 0 20px; }
+        .contact-page .card-wrapper .card-right h3 {
+          color: #2a333a;
+          margin-top: 0; } }
+  @media (min-width: 992px) {
     .contact-page .card-wrapper .card-left {
-      background: #fff;
-      padding: 10px;
-      border-radius: 4px;
+      width: 400px;
+      height: 400px;
+      margin: -250px 20px 0 0; }
+    .contact-page .card-wrapper .card-right {
+      width: 400px;
+      margin: -250px 0 0 20px; } }
+  @media (min-width: 1200px) {
+    .contact-page .card-wrapper .card-left {
       width: 500px;
-      height: 500px; } }
+      height: 500px;
+      margin: -300px 20px 0 0; }
+    .contact-page .card-wrapper .card-right {
+      width: 500px;
+      margin: -300px 0 0 20px; } }
 
 nav {
   position: fixed;
-  background-color: #ce7400;
+  background-color: #2a333a;
   left: 0;
   right: 0;
   bottom: 0;

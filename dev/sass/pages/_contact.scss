@@ -1,34 +1,89 @@
 .contact-page {
-  background: url("/img/contact.jpg") center no-repeat;
   background-size: cover;
+  background-color: $color-primary-400;
 
   .card-wrapper {
 
-
-    .card {
-
-    }
-
     .card-left {
-      height: 200px;
+      display: none;
+      height: 280px;
       width: auto;
       overflow: hidden;
     }
 
     .card-right {
+      padding: 40px;
 
+      h3 {
+        color: #fff;
+      }
     }
   }
 
   @include breakpoint(tablet) {
+    background: url("/img/contact.jpg") center no-repeat;
+
     .card-wrapper {
 
       .card-left {
+        display: block;
         background: #fff;
         padding: 10px;
         border-radius: 4px;
+        width: 300px;
+        height: 300px;
+        position: fixed;
+        top: 50%;
+        right: 50%;
+        margin: -200px 20px 0 0;
+      }
+
+      .card-right {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 4px;
+        position: fixed;
+        width: 300px;
+        left: 50%;
+        top: 50%;
+        margin: -200px 0 0 20px;
+
+        h3 {
+          color: $color-primary-500;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(computer) {
+    .card-wrapper {
+
+      .card-left {
+        width: 400px;
+        height: 400px;
+        margin: -250px 20px 0 0;
+      }
+
+      .card-right {
+        width: 400px;
+        margin: -250px 0 0 20px;
+      }
+    }
+  }
+
+  @include breakpoint(computer-wide) {
+    .card-wrapper {
+
+      .card-left {
         width: 500px;
         height: 500px;
+        margin: -300px 20px 0 0;
+      }
+
+      .card-right {
+        width: 500px;
+        margin: -300px 0 0 20px;
       }
     }
   }

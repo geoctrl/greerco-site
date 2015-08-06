@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'greerco-font';
-	src:url('fonts/greerco-font.eot?-vexrcs');
-	src:url('fonts/greerco-font.eot?#iefix-vexrcs') format('embedded-opentype'),
-		url('fonts/greerco-font.ttf?-vexrcs') format('truetype'),
-		url('fonts/greerco-font.woff?-vexrcs') format('woff'),
-		url('fonts/greerco-font.svg?-vexrcs#greerco-font') format('svg');
+	src:url('fonts/greerco-font.eot?-yc7rkh');
+	src:url('fonts/greerco-font.eot?#iefix-yc7rkh') format('embedded-opentype'),
+		url('fonts/greerco-font.ttf?-yc7rkh') format('truetype'),
+		url('fonts/greerco-font.woff?-yc7rkh') format('woff'),
+		url('fonts/greerco-font.svg?-yc7rkh#greerco-font') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.gi-arrow_back:before {
+	content: "\e200";
+}
 .gi-menu:before {
 	content: "\e20e";
 }
