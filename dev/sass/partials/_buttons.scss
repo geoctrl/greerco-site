@@ -150,6 +150,17 @@ button {
     }
   }
 
+  &.btn-white-transparent {
+    background-color: transparent;
+    color: #fff;
+    border-color: transparent;
+    text-shadow: 0 1px 1px rgba(#000, .7);
+
+    &:hover {
+      background-color: $color-primary-300;
+    }
+  }
+
   &.btn-accent {
     background-color: transparent;
     border-color: $color-accent-500;

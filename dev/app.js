@@ -1,5 +1,6 @@
 var greerApp = angular.module('greerApp', [
-    'ui.router'
+    'ui.router',
+    'ngImageBox'
 ])
 
     .config(function($urlRouterProvider, $locationProvider) {

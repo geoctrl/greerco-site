@@ -472,6 +472,13 @@ button {
       border-color: transparent;
       background-color: #2a333a;
       color: #fff; }
+  .btn.btn-white-transparent {
+    background-color: transparent;
+    color: #fff;
+    border-color: transparent;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7); }
+    .btn.btn-white-transparent:hover {
+      background-color: #4c5d69; }
   .btn.btn-accent {
     background-color: transparent;
     border-color: #c03a2e;
@@ -658,7 +665,87 @@ textarea {
 
 .details-page {
   z-index: 20;
-  background-color: #fff; }
+  background-color: #e3e3e3;
+  background-position: center;
+  background-size: cover; }
+  .details-page .details-header {
+    padding: 20px 0 0 20px;
+    line-height: 20px; }
+    .details-page .details-header .btn {
+      position: fixed;
+      top: 20px;
+      left: 20px; }
+      .details-page .details-header .btn i {
+        vertical-align: middle;
+        line-height: 20px; }
+      .details-page .details-header .btn span {
+        vertical-align: middle;
+        margin-left: 4px;
+        line-height: 19px;
+        font-weight: 700; }
+  .details-page .details-info {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    width: 200px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 18px rgba(0, 0, 0, 0.2);
+    padding: 50px; }
+    .details-page .details-info .details-info-title {
+      font-size: 30px;
+      font-family: "Signika Negative" sans-serif;
+      font-weight: 600;
+      text-align: center;
+      color: #808080;
+      margin-bottom: 10px; }
+    .details-page .details-info .details-info-address {
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 700; }
+    .details-page .details-info .details-info-about {
+      margin-bottom: 40px;
+      text-align: center; }
+    .details-page .details-info .details-info-leased {
+      font-weight: 400;
+      font-size: 20px;
+      border: solid 2px #f3f3f3;
+      color: #d3d3d3;
+      border-radius: 40px;
+      padding: 6px 10px;
+      text-align: center;
+      width: 130px;
+      margin: 0 auto;
+      cursor: default; }
+    .details-page .details-info .btn {
+      font-size: 18px;
+      border-radius: 40px;
+      padding: 12px 20px;
+      height: auto;
+      font-weight: 500; }
+
+.details-images {
+  padding: 40px 40px 80px 40px;
+  background-color: #191e22; }
+  .details-images .details-img-box {
+    height: 200px;
+    float: left;
+    margin: 0 30px 30px 0;
+    position: relative;
+    cursor: pointer; }
+    .details-images .details-img-box:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border: solid 0 #c03a2e;
+      transition: border 200ms ease; }
+    .details-images .details-img-box:hover:after {
+      border-width: 4px; }
+  .details-images .details-img {
+    height: 200px; }
 
 .contact-page {
   background-size: cover;
@@ -671,7 +758,10 @@ textarea {
   .contact-page .card-wrapper .card-right {
     padding: 40px; }
     .contact-page .card-wrapper .card-right h3 {
-      color: #fff; }
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      font-weight: 400; }
   @media (min-width: 768px) {
     .contact-page {
       background: url("/img/contact.jpg") center no-repeat; }
@@ -692,12 +782,13 @@ textarea {
         border-radius: 4px;
         position: fixed;
         width: 300px;
+        height: 280px;
         left: 50%;
         top: 50%;
         margin: -200px 0 0 20px; }
         .contact-page .card-wrapper .card-right h3 {
           color: #2a333a;
-          margin-top: 0; } }
+          margin-top: 20px; } }
   @media (min-width: 992px) {
     .contact-page .card-wrapper .card-left {
       width: 400px;
@@ -705,7 +796,10 @@ textarea {
       margin: -250px 20px 0 0; }
     .contact-page .card-wrapper .card-right {
       width: 400px;
-      margin: -250px 0 0 20px; } }
+      height: 380px;
+      margin: -250px 0 0 20px; }
+      .contact-page .card-wrapper .card-right h3 {
+        margin: 40px 0 40px 0; } }
   @media (min-width: 1200px) {
     .contact-page .card-wrapper .card-left {
       width: 500px;
@@ -713,7 +807,10 @@ textarea {
       margin: -300px 20px 0 0; }
     .contact-page .card-wrapper .card-right {
       width: 500px;
-      margin: -300px 0 0 20px; } }
+      height: 480px;
+      margin: -300px 0 0 20px; }
+      .contact-page .card-wrapper .card-right h3 {
+        margin: 80px 0 50px 0; } }
 
 nav {
   position: fixed;
@@ -722,7 +819,7 @@ nav {
   right: 0;
   bottom: 0;
   height: 50px;
-  z-index: 20; }
+  z-index: 30; }
   nav .nav-logo {
     background-image: url("/img/logo-small.svg");
     background-position: center;

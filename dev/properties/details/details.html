@@ -1,0 +1,31 @@
+<div class="details-page" full-page has-nav="true" background-image="{{property.imageMain}}">
+    <div class="details-header">
+        <button class="btn btn-white-transparent" ui-sref="properties">
+            <i class="gi gi-arrow_back"></i> <span>Back</span>
+        </button>
+    </div>
+
+    <div class="details-info">
+        <div class="details-info-title">
+            {{property.name}}
+        </div>
+        <div class="details-info-address">
+            {{property.address}}
+        </div>
+        <div class="details-info-about">
+            {{property.details}}
+        </div>
+        <div class="details-info-leased" ng-hide="property.leased">
+            Fully Leased
+        </div>
+        <div class="text-center">
+            <button class="btn btn-accent">For Lease</button>
+        </div>
+    </div>
+</div>
+
+<div class="details-images clearfix" image-box="property.images">
+    <div class="details-img-box" ng-repeat="image in property.images">
+        <img class="details-img" src="" alt="" ng-src="/img/{{image}}">
+    </div>
+</div>
