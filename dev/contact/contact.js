@@ -7,6 +7,26 @@ greerApp.config(function($stateProvider) {
         });
 });
 
-var aboutCtrl = function($scope) {
+var aboutCtrl = function($scope, $http) {
+    $scope.submitContactForm = function() {
+        if ($scope.contact.$valid) {
 
+            var data = {
+                name: $scope.contact.name,
+                email: $scope.contact.email
+            };
+
+            $http.get('email.php', data)
+                .then(function() {
+                    $scope.contactSuccess = true;
+                }, function(data) {
+                    $scope.contactSuccess = true;
+                    console.log('Error', data);
+                })
+        } else {
+            $scope.contact.name.$touched = true;
+            $scope.contact.email.$touched = true;
+
+        }
+    }
 };

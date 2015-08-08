@@ -80,25 +80,4 @@
       }
     }
   }
-
-  @include breakpoint(computer-wide) {
-    .card-wrapper {
-
-      .card-left {
-        width: 500px;
-        height: 500px;
-        margin: -300px 20px 0 0;
-      }
-
-      .card-right {
-        width: 500px;
-        height: 480px;
-        margin: -300px 0 0 20px;
-
-        h3 {
-          margin: 80px 0 50px 0;
-        }
-      }
-    }
-  }
 }
