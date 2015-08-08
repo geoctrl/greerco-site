@@ -81,3 +81,12 @@
     }
   }
 }
+
+.paragraph {
+  color :#fff;
+  text-align: center;
+
+  @include breakpoint(tablet) {
+    color: #404040;
+  }
+}

@@ -830,6 +830,13 @@ textarea {
       .contact-page .card-wrapper .card-right h3 {
         margin: 40px 0 40px 0; } }
 
+.paragraph {
+  color: #fff;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .paragraph {
+      color: #404040; } }
+
 nav {
   position: fixed;
   background-color: #2a333a;
