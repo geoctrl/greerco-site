@@ -15,39 +15,50 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
         this.init = function() {
             $compile(overlayImage)($scope);
             $element.append(overlayImage);
-            overlayImage[0].style.opacity = 1;
-            overlayImage[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
+            overlayImage[0].style.opacity = 0;
 
-            this.nextImage(intervalCount, true);
+            // set up images
+            $element[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
+            overlayImage[0].style.backgroundImage = "url('"+self.images[getNextIndex(currentIndex)]+"')";
+            currentIndex = getNextIndex(currentIndex);
+
             self.interval = $interval(function() {
-                self.nextImage(intervalCount, null);
+                self.nextImage();
                 intervalCount++;
             }, 7000);
         };
 
-        this.nextImage = function(interval, random) {
+        this.nextImage = function() {
             if (overlayImage.hasClass('isActive')) {
                 overlayImage.removeClass('isActive');
                 Velocity(overlayImage, {
-                    opacity: 0.00001
+                    opacity: 0
                 }, {
-                    duration: 1500
+                    duration: 1500,
+                    complete: function() {
+                        loadNextImage()
+                    }
                 })
             } else {
                 overlayImage.addClass('isActive');
                 Velocity(overlayImage, {
                     opacity: 1
                 }, {
-                    duration: 1500
+                    duration: 1500,
+                    complete: function() {
+                        loadNextImage()
+                    }
                 })
             }
-            currentIndex = getNextIndex(currentIndex);
+        };
 
-            if (interval%2) {
-                overlayImage[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
+        var loadNextImage = function() {
+            if (intervalCount%2) {
+                $element[0].style.backgroundImage = "url('"+self.images[getNextIndex(currentIndex)]+"')";
             } else {
-                $element[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
+                overlayImage[0].style.backgroundImage = "url('"+self.images[getNextIndex(currentIndex)]+"')";
             }
+            currentIndex = getNextIndex(currentIndex);
         };
 
         var getNextIndex = function(currentIndex) {
