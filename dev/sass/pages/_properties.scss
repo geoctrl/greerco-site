@@ -179,3 +179,48 @@
     height: 200px;
   }
 }
+
+.darken-images {
+  background: $color-primary-500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .5;
+}
+
+.property-quote {
+  height: 238px;
+  width: 300px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -119px 0 0 -150px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(#000, .8);
+
+  .property-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .property-description {
+
+  }
+
+  @include breakpoint(tablet) {
+    width: 500px;
+    height: 174px;
+    margin: -87px 0 0 -250px;
+
+    .property-title {
+      font-size: 24px;
+    }
+
+    .property-description {
+      font-size: 17px;
+    }
+  }
+}

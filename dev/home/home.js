@@ -8,5 +8,10 @@ greerApp.config(function($stateProvider) {
 });
 
 var homeCtrl = function($scope) {
-
+    $scope.images = [
+        '/img/home-bkg-1.jpg',
+        '/img/home-bkg-2.jpg',
+        '/img/home-bkg-3.jpg',
+        '/img/home-bkg-4.jpg'
+    ];
 };

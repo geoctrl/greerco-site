@@ -1,29 +1,16 @@
 .home-page {
-
-
-  .home-page-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .home-page-image-overlay {
-    @extend .home-page-image;
-    opacity: 0;
-  }
+  background-image: url('/img/properties-fade/IMG_2498.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   .home-page-content {
-    height: 170px;
+    height: 100px;
     width: 250px;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -85px 0 0 -125px;
+    margin: -50px 0 0 -125px;
     color: #fff;
     text-align: center;
     z-index: $z-index-1;
@@ -49,8 +36,8 @@
   @include breakpoint(tablet) {
     .home-page-content {
       width: 310px;
-      height: 236px;
-      margin: -120px 0 0 -155px;
+      height: 150px;
+      margin: -75px 0 0 -155px;
     }
 
     .home-page-logo {
@@ -69,8 +56,8 @@
   @include breakpoint(computer) {
     .home-page-content {
       width: 680px;
-      height: 304px;
-      margin: -152px 0 0 -340px;
+      height: 200px;
+      margin: -100px 0 0 -340px;
     }
 
     .home-page-logo {

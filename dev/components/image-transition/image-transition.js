@@ -1,25 +1,20 @@
 greerApp.directive('imageTransition', function($interval, $compile, $rootScope) {
 
-    var imageTransitionLink = function(scope, element, attrs) {
+    var imageTransitionCtrl = function($scope, $element) {
         $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState) {
             self.stopInterval();
         });
 
         var self = this;
-        var overlayImage = angular.element('<div class="home-page-image-overlay"></div>');
+        var overlayImage = angular.element('<div class="page-image-overlay"></div>');
         var currentIndex = 0;
         var intervalCount = 0;
         this.interval = '';
-        this.images = [
-            '/img/home-bkg-1.jpg',
-            '/img/home-bkg-2.jpg',
-            '/img/home-bkg-3.jpg',
-            '/img/home-bkg-4.jpg'
-        ];
+        this.images = $scope.images;
 
         this.init = function() {
-            $compile(overlayImage)(scope);
-            element.append(overlayImage);
+            $compile(overlayImage)($scope);
+            $element.append(overlayImage);
             overlayImage[0].style.opacity = 0;
             this.nextImage(intervalCount, true);
             self.interval = $interval(function() {
@@ -31,10 +26,10 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
         this.nextImage = function(interval, random) {
             if (random) {
                 currentIndex = 0;
-                element[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
+                $element[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
             } else {
                 if (interval%2) {
-                    element[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
+                    $element[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
                 } else {
                     overlayImage[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
                 }
@@ -75,7 +70,10 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
     return {
         restrict: 'E',
         replace: true,
-        template: '<div class="home-page-image"></div>',
-        link: imageTransitionLink
+        template: '<div class="page-image"></div>',
+        scope: {
+            images: '='
+        },
+        controller: imageTransitionCtrl
     }
 });
