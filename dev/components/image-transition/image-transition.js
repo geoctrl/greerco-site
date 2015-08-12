@@ -29,7 +29,7 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
             if (overlayImage.hasClass('isActive')) {
                 overlayImage.removeClass('isActive');
                 Velocity(overlayImage, {
-                    opacity: 0
+                    opacity: 0.00001
                 }, {
                     duration: 1500
                 })
