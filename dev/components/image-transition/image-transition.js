@@ -15,7 +15,9 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
         this.init = function() {
             $compile(overlayImage)($scope);
             $element.append(overlayImage);
-            overlayImage[0].style.opacity = 0;
+            overlayImage[0].style.opacity = 1;
+            overlayImage[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
+
             this.nextImage(intervalCount, true);
             self.interval = $interval(function() {
                 self.nextImage(intervalCount, null);
@@ -24,21 +26,6 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
         };
 
         this.nextImage = function(interval, random) {
-            if (random) {
-                currentIndex = 0;
-                $element[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
-            } else {
-                if (interval%2) {
-                    $element[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
-                } else {
-                    overlayImage[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
-                }
-                toggleFadeOverlay();
-            }
-            currentIndex = getNextIndex(currentIndex);
-        };
-
-        var toggleFadeOverlay = function() {
             if (overlayImage.hasClass('isActive')) {
                 overlayImage.removeClass('isActive');
                 Velocity(overlayImage, {
@@ -53,6 +40,13 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
                 }, {
                     duration: 1500
                 })
+            }
+            currentIndex = getNextIndex(currentIndex);
+
+            if (interval%2) {
+                overlayImage[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
+            } else {
+                $element[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
             }
         };
 
