@@ -25,7 +25,7 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
             self.interval = $interval(function() {
                 self.nextImage();
                 intervalCount++;
-            }, 7000);
+            }, 5000);
         };
 
         this.nextImage = function() {
