@@ -16,7 +16,7 @@ var contactCtrl = function($scope, $http) {
                 email: $scope.contact.email
             };
 
-            $http.get('email.php', data)
+            $http.post('email.php', data)
                 .then(function() {
                     $scope.contactSuccess = true;
                 }, function(data) {

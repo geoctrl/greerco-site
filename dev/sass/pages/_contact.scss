@@ -87,6 +87,7 @@
   text-align: center;
 
   @include breakpoint(tablet) {
-    color: #404040;
+    text-shadow: 0 1px 3px #000;
+    text-align: left;
   }
 }

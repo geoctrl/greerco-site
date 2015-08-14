@@ -890,7 +890,8 @@ textarea {
   text-align: center; }
   @media (min-width: 768px) {
     .paragraph {
-      color: #404040; } }
+      text-shadow: 0 1px 3px #000;
+      text-align: left; } }
 
 .about-page {
   position: relative; }
