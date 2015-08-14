@@ -26,11 +26,11 @@ try {
 
             </body>
             </html>',
-        'subject' => 'TheGreerCo.com Contact Request',
+        'subject' => 'theGreerCo Contact Request',
         'from_email' => 'auto@thegreerco.com',
         'to' => array(
             array(
-                'email' => 'kami@thegreerco.com'
+                'email' => 'jared@thegreerco.com'
             )
         ),
     );
