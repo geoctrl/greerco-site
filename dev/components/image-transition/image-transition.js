@@ -7,6 +7,9 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
 
         var self = this;
         var overlayImage = angular.element('<div class="page-image-overlay"></div>');
+        var buttonNavLeft = angular.element('<div class="property-btn property-btn-left"><i class="gi gi-keyboard_arrow_left"></i></div>')
+        var buttonNavRight = angular.element('<div class="property-btn property-btn-right"><i class="gi gi-keyboard_arrow_right"></i></div>')
+        var darkenImage = angular.element('<div class="darken-images"></div>');
         var currentIndex = 0;
         var intervalCount = 0;
         this.interval = '';
@@ -14,18 +17,27 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
 
         this.init = function() {
             $compile(overlayImage)($scope);
+            $compile(buttonNavLeft)($scope);
+            $compile(buttonNavRight)($scope);
             $element.append(overlayImage);
+            $element.append(darkenImage);
+            //$element.append(buttonNavRight);
+            //$element.append(buttonNavLeft);
             overlayImage[0].style.opacity = 0;
 
-            // set up images
             $element[0].style.backgroundImage = "url('"+self.images[currentIndex]+"')";
             overlayImage[0].style.backgroundImage = "url('"+self.images[getNextIndex(currentIndex)]+"')";
             currentIndex = getNextIndex(currentIndex);
 
+            // set up images
+            this.startInterval();
+        };
+
+        this.startInterval = function() {
             self.interval = $interval(function() {
                 self.nextImage();
                 intervalCount++;
-            }, 5000);
+            }, 6000);
         };
 
         this.nextImage = function() {
@@ -34,7 +46,7 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
                 Velocity(overlayImage, {
                     opacity: 0
                 }, {
-                    duration: 1500,
+                    duration: 1000,
                     complete: function() {
                         loadNextImage()
                     }
@@ -44,13 +56,30 @@ greerApp.directive('imageTransition', function($interval, $compile, $rootScope) 
                 Velocity(overlayImage, {
                     opacity: 1
                 }, {
-                    duration: 1500,
+                    duration: 1000,
                     complete: function() {
                         loadNextImage()
                     }
                 })
             }
         };
+
+        //$element.on('mouseover', function() {
+        //    self.stopInterval();
+        //});
+        //
+        //$element.on('mouseleave', function() {
+        //    self.startInterval();
+        //});
+
+        buttonNavLeft.on('click', function() {
+
+        });
+
+        buttonNavRight.on('click', function() {
+            self.nextImage();
+            intervalCount++;
+        });
 
         var loadNextImage = function() {
             if (intervalCount%2) {
