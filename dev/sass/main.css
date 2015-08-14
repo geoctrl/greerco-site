@@ -535,7 +535,9 @@ textarea {
     input[type="search"],
     select,
     textarea {
-      color: #2a333a; }
+      color: #2a333a;
+      background-color: #fff;
+      border-color: #fff; }
       input[type="text"]:focus, input[type="text"].active,
       input[type="email"]:focus,
       input[type="email"].active,
@@ -570,9 +572,6 @@ label {
   font-size: 12px;
   margin-top: 8px;
   display: block; }
-  @media (min-width: 768px) {
-    .error {
-      color: #c03a2e; } }
 
 textarea {
   max-width: 100%;
@@ -834,7 +833,6 @@ textarea {
         margin: -200px 20px 0 0; }
       .contact-page .card-wrapper .card-right {
         padding: 20px;
-        background-color: #fff;
         border-radius: 4px;
         position: fixed;
         width: 300px;
@@ -843,8 +841,9 @@ textarea {
         top: 50%;
         margin: -200px 0 0 20px; }
         .contact-page .card-wrapper .card-right h3 {
-          color: #2a333a;
-          margin-top: 20px; } }
+          margin-top: 20px;
+          text-align: left;
+          text-shadow: 0 1px 3px #000; } }
   @media (min-width: 992px) {
     .contact-page .card-wrapper .card-left {
       width: 400px;
@@ -855,7 +854,7 @@ textarea {
       height: 380px;
       margin: -250px 0 0 20px; }
       .contact-page .card-wrapper .card-right h3 {
-        margin: 40px 0 40px 0; } }
+        margin: 40px 0 30px 0; } }
 
 .paragraph {
   color: #fff;
@@ -863,6 +862,55 @@ textarea {
   @media (min-width: 768px) {
     .paragraph {
       color: #404040; } }
+
+.about-page {
+  position: relative; }
+  .about-page:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: url("../../img/properties-fade/IMG_2654.jpg") center no-repeat;
+    background-size: cover;
+    z-index: 0;
+    opacity: .5; }
+
+.about-container {
+  position: absolute;
+  z-index: 10;
+  color: #fff;
+  width: 280px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -140px; }
+  .about-container .about-logo {
+    display: none; }
+  .about-container .about-content {
+    text-align: center; }
+    .about-container .about-content .about-title {
+      font-weight: 700;
+      font-size: 18px; }
+    .about-container .about-content .about-description {
+      font-size: 16px; }
+  @media (min-width: 768px) {
+    .about-container {
+      width: 600px;
+      height: 160px;
+      margin: -80px 0 0 -300px; }
+      .about-container .about-logo {
+        display: block;
+        float: left;
+        width: 200px; }
+        .about-container .about-logo img {
+          margin-top: 26px; }
+      .about-container .about-content {
+        text-align: left;
+        margin-left: 240px; }
+        .about-container .about-content .about-title {
+          font-size: 20px; } }
 
 nav {
   position: fixed;

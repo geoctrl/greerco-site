@@ -3,11 +3,11 @@ greerApp.config(function($stateProvider) {
         .state('contact', {
             url: '/contact',
             templateUrl: '/contact/contact.html',
-            controller: aboutCtrl
+            controller: contactCtrl
         });
 });
 
-var aboutCtrl = function($scope, $http) {
+var contactCtrl = function($scope, $http) {
     $scope.submitContactForm = function() {
         if ($scope.contact.$valid) {
 

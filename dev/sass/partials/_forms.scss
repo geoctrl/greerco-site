@@ -26,6 +26,8 @@ textarea {
 
   @include breakpoint(tablet) {
     color: $color-primary-500;
+    background-color: #fff;
+    border-color: #fff;
 
     &:focus, &.active {
       border-color: $color-primary-500;
@@ -61,7 +63,6 @@ label {
   display: block;
 
   @include breakpoint(tablet) {
-    color: $color-accent-500;
   }
 }
 
