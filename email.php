@@ -30,7 +30,7 @@ try {
         'from_email' => 'auto@thegreerco.com',
         'to' => array(
             array(
-                'email' => 'jared@thegreerco.com'
+                'email' => 'jc@thegreerco.com'
             )
         ),
     );
