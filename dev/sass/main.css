@@ -1087,7 +1087,7 @@ nav {
       nav .nav-menu-btn {
         display: none; } }
 
-.page-image, .page-image-overlay {
+.page-image, .image-slide {
   position: absolute;
   top: 0;
   left: 0;
@@ -1097,7 +1097,8 @@ nav {
   background-position: center;
   background-size: cover; }
 
-.page-image-overlay {
-  opacity: 0; }
+.image-slide {
+  opacity: 0;
+  z-index: 0; }
 
 /*# sourceMappingURL=main.css.map */
